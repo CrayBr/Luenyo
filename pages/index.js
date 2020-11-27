@@ -8,12 +8,14 @@ export default function Home() {
       </Head>
       <main>
         <nav className="main-nav">
-            <div className="logo">Nav</div>
+            <div className="logo"><img src="/logoLuenyo.svg" alt="Logo Luenyo"/></div>
             <ul className="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Connect</a></li>
+                <li><a href="#Trabalhos">Trabalhos</a></li>
+                <li><a href="#QuemSomos">Quem Somos</a></li>
+                <li><a href="#Equipe">Equipe</a></li>
+                <li><a href="#Serviços">Serviços</a></li>
+                <li><a href="#Contato">Contato</a></li>
+                <li><a href="#Clientes">Clientes</a></li>
           </ul>
           <div onClick={nav} className="burger">
                 <div className="line line1"></div>
@@ -33,9 +35,6 @@ export default function Home() {
               <span className="celular"><img src="/08_cel.svg" alt="Celular"/></span>
           </div>
         </nav>
-
-
-
       </main>
     </div>
   )
