@@ -6,8 +6,8 @@ export default function Home() {
       <Head>
         <title>Luenyo</title>
       </Head>
-      <main>
-        <nav className="main-nav">
+      <main id="Trabalhos">
+        <header className="main-nav">
             <div className="logo"><img src="/logoLuenyo.svg" alt="Logo Luenyo"/></div>
             <ul className="nav-links">
                 <li><a href="#Trabalhos">Trabalhos</a></li>
@@ -22,7 +22,7 @@ export default function Home() {
                 <div className="line line2"></div>
                 <div className="line line3"></div>
           </div>
-        </nav>
+        </header>
         <nav className="carrossel">
           <div className="box">
               <span className="celular"><img src="/01_cel.svg" alt="Celular"/></span>
@@ -34,6 +34,9 @@ export default function Home() {
               <span className="celular"><img src="/07_cel.svg" alt="Celular"/></span>
               <span className="celular"><img src="/08_cel.svg" alt="Celular"/></span>
           </div>
+        </nav>
+        <nav id="Contato" className="vw">
+          teste
         </nav>
       </main>
     </div>

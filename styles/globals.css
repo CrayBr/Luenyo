@@ -12,6 +12,7 @@
 /*CONF DESKTOP*/
 /*Header*/
 .main-nav {
+  position: fixed;
   display: flex;
   height: 8vh;
   justify-content: space-between;
@@ -19,26 +20,28 @@
   color: #141414;
   text-transform: uppercase;
   background: #ffe79a;
-  z-index: -1;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 .logo {
+  margin-top: 5px;
   margin-left: 8%;
-  width: 170px;
-  border: 30px solid #141414;
-
-  border-radius: 0 0 150px 150px; 
+  width: 150px;
+  border: 28px solid #141414;
+  border-radius: 0 0 80px 80px; 
   background-color: #141414; 
 }
 .nav-links {
   display: flex;
   justify-content: space-around;
   margin-right: 8%;
+  box-sizing:border-box;
 }
 .nav-links li{
   margin-left: 10px;
   border: 1px solid #141414;
   border-radius: 25px;
-  padding: 5px 0 5px 0;
   width: 125px;
   text-align: center;
 }
@@ -46,6 +49,14 @@
   cursor: pointer;
   color: #fff;
   background-color:#141414;
+}
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0 5px 0;
+  width: 100%;
+  height: 100%;
 }
 .burger {
   display: none;
@@ -74,75 +85,63 @@
 
 /*Carrossel*/
 @keyframes animate {
-  0% {
-    transform: perspective(1000px) rotateY(0deg);
+  from {
+    transform: perspective(3000px) rotateY(0deg);
   }
-  100% {
-    transform: perspective(1000px) rotateY(360deg);
+  to {
+    transform: perspective(3000px) rotateY(360deg);
   }
 }
 .carrossel {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 80vh;
-  padding-top: 15vh;
+  height: 100vh;
+  padding: 18vh 0 10vh 0;
 }
 .box {
-  position: relative;
-  width: 250px;
-  height: 500px;
+  display: flex;
+  align-items: center;
+  width: 270px;
   transform-style: preserve-3d;
-  animation: animate 20s infinite linear;
-  z-index: -2;
-}
-.box span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-.celular:nth-child(1) {
-	transform: rotateY(0deg) translateZ(300px); 
-} 
-.celular:nth-child(2) {
-	transform: rotateY(45deg) translateZ(300px); 
-} 
-.celular:nth-child(3) {
-	transform: rotateY(90deg) translateZ(300px); 
-} 
-.celular:nth-child(4) {
-	transform: rotateY(135deg) translateZ(300px); 
-} 
-.celular:nth-child(5) {
-	transform: rotateY(180deg) translateZ(300px); 
-} 
-.celular:nth-child(6) {
-	transform: rotateY(225deg) translateZ(300px); 
-} 
-.celular:nth-child(7) {
-	transform: rotateY(270deg) translateZ(300px); 
-} 
-.celular:nth-child(8) {
-	transform: rotateY(315deg) translateZ(300px); 
-} 
-.box span img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  animation: animate 30s infinite linear;
 }
 .box:hover {
   cursor: pointer;
   animation-play-state: paused;
 }
+.celular {
+  position: absolute;
+  width: 100%;
+  transform-origin: center;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.celular:nth-child(1) {
+	transform: rotateY(0deg) translateZ(330px); 
+} 
+.celular:nth-child(2) {
+	transform: rotateY(45deg) translateZ(330px); 
+} 
+.celular:nth-child(3) {
+	transform: rotateY(90deg) translateZ(330px); 
+} 
+.celular:nth-child(4) {
+	transform: rotateY(135deg) translateZ(330px); 
+} 
+.celular:nth-child(5) {
+	transform: rotateY(180deg) translateZ(330px); 
+} 
+.celular:nth-child(6) {
+	transform: rotateY(225deg) translateZ(330px); 
+} 
+.celular:nth-child(7) {
+	transform: rotateY(270deg) translateZ(330px); 
+} 
+.celular:nth-child(8) {
+	transform: rotateY(315deg) translateZ(330px); 
+} 
+
 
 /*CONF -1150PX*/
 /*Header*/
@@ -166,15 +165,12 @@
     margin-right: 0;
   }
   .nav-links li{
-    display: flex;
     margin-left: 0;
     border: none;
     border-radius: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -183,4 +179,8 @@
   .carrossel {
     display: none;
   }
+}
+
+.vw {
+  height: 2500px;
 }
