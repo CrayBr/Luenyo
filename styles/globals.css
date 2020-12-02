@@ -25,12 +25,16 @@
   z-index: 1;
 }
 .logo {
-  margin-top: 5px;
   margin-left: 8%;
   width: 150px;
-  border: 28px solid #141414;
-  border-radius: 0 0 80px 80px; 
+  border: 27px solid #141414;
+  border-radius: 22px 22px 80px 80px; 
   background-color: #141414; 
+  transition: transform .3s; /* Animation */
+}
+.logo img:hover {
+  cursor: pointer;
+  transform: scale(1.2); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 .nav-links {
   display: flex;
@@ -83,7 +87,7 @@
   transform: translateX(0%);
 }
 
-/*Carrossel*/
+/*Trabalhos*/
 @keyframes animate {
   from {
     transform: perspective(3000px) rotateY(0deg);
@@ -98,6 +102,8 @@
   width: 100%;
   height: 100vh;
   padding: 18vh 0 10vh 0;
+  background-image: url('../public/bgTrabalhos.jpg');
+  background-size: cover;
 }
 .box {
   display: flex;
@@ -142,7 +148,39 @@
 	transform: rotateY(315deg) translateZ(330px); 
 } 
 
+/*Quem Somos*/
+.confQuemSomos {
+  background-image: url('../public/bgQuemSomos.jpg');
+  background-size: cover;
+  height: 100vh;
+}
 
+/*Equipe*/
+.confEquipe {
+  background-image: url('../public/bgEquipe.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+/*Serviços*/
+.confServiços {
+  background-color: #111111;
+  height: 100vh;
+}
+
+/*Contato*/
+.confContato {
+  background-image: url('../public/bgContato.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+/*Clientes*/
+.confClientes {
+  background-image: url('../public/bgClientes.jpg');
+  background-size: cover;
+  height: 100vh;
+}
 /*CONF -1150PX*/
 /*Header*/
 @media screen and (max-width: 1150px) {
@@ -181,6 +219,3 @@
   }
 }
 
-.vw {
-  height: 2500px;
-}

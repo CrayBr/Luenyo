@@ -8,7 +8,7 @@ export default function Home() {
       </Head>
       <main id="Trabalhos">
         <header className="main-nav">
-            <div className="logo"><img src="/logoLuenyo.svg" alt="Logo Luenyo"/></div>
+            <nav className="logo"><a href="#Trabalhos"><img src="/logoLuenyo.svg" alt="Logo Luenyo"/></a></nav>
             <ul className="nav-links">
                 <li><a href="#Trabalhos">Trabalhos</a></li>
                 <li><a href="#QuemSomos">Quem Somos</a></li>
@@ -35,8 +35,15 @@ export default function Home() {
               <span className="celular"><img src="/08_cel.svg" alt="Celular"/></span>
           </div>
         </nav>
-        <nav id="Contato" className="vw">
-          teste
+        <nav id="QuemSomos" className="confQuemSomos">
+        </nav>
+        <nav id="Equipe" className="confEquipe">
+        </nav>
+        <nav id="Serviços" className="confServiços">
+        </nav>
+        <nav id="Contato" className="confContato">
+        </nav>
+        <nav id="Clientes" className="confClientes">
         </nav>
       </main>
     </div>
