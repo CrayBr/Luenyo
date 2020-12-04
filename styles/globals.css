@@ -242,30 +242,34 @@
 .confServiços {
   background-color: #111111;
   min-height: 100vh;
+  background-size: cover;
 }
 
 .containerServiços {
-  padding-top: 13vh;
+  padding-top: 11vh;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 .boxServiços {
+  width: 450px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 0 2px 0 2px;
+}
+
+.boxServiços2 {
+  width: 300px;
+  margin-left: 35px;
 }
 
 .boxServiçosCima {
   height: 250px;
-  width: 500px;
 }
 .boxServiçosBaixo {
   height: 250px;
-  width: 500px;
 }
 
 .TtServiços {
@@ -288,6 +292,7 @@
 .confContato {
   padding-top: 8vh;
   display: flex;
+  flex-wrap: wrap;
   background-image: url('../public/bgContato.jpg');
   background-size: cover;
   min-height: 100vh;
@@ -296,7 +301,7 @@
 
 .container50pDireita {
   padding-left: 10%;
-  width: 40%;
+  width: 590px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -311,13 +316,12 @@
   padding: 10px 0 10px 0;
   border: 1px solid  #ffe79a;
   border-radius: 25px;
-  width: 55%;
+  width: 60%;
   color: #ffe79a;
   font-weight: 550;
 }
 
 .container50pEsquerda {
-  padding-left: 10%;
   width: 50%;
   height: 100vh;
   display: flex;
@@ -388,10 +392,44 @@ textarea {
   background-size: cover;
   min-height: 100vh;
 }
+/*CONF -1197PX*/
+@media screen and (max-width: 1196px) {
+  /*Contato*/
+  .confContato {
+    padding-top: 8vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('../public/bgContato.jpg');
+    background-size: cover;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+  .container50pDireita {
+    padding-left: 0;
+    width: 590px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container50pEsquerda {
+    text-align: center;
+    width: 50%;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 
 /*CONF -1150PX*/
 /*Header*/
 @media screen and (max-width: 1150px) {
+  /*Header*/
   .burger {
     display: block;
   }
@@ -418,6 +456,36 @@ textarea {
     width: 100%;
     height: 100%;
   }
+  .textoQuemSomos {
+    width: 70%;
+  }
+  .logoLuenyo {
+    padding-bottom: 1%;
+  }
+}
+
+/*CONF -800PX*/
+@media screen and (max-width: 800px) {
+    /*Serviços*/
+    .boxServiços2 {
+      width: 450px;
+      margin-left: 0;
+    }
+    .boxServiçosCima {
+      margin-bottom: 2rem;
+      height: auto;
+    }
+    .boxServiçosBaixo {
+      margin-bottom: 2rem;
+      height: auto;
+    }
+    .logoLuenyo {
+      width: 20%;
+    }
+    .textoQuemSomos {
+      width: 90%;
+      font-size: 1.3rem;
+    }
 }
 
 /*CONF -700PX*/
