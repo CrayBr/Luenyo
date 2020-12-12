@@ -295,7 +295,7 @@
   flex-wrap: wrap;
   background-image: url('../public/bgContato.jpg');
   background-size: cover;
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -344,6 +344,24 @@
   color: #ffe79a;
 }
 
+.show {
+  display: none;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  background: transparent;
+  padding: 10px 0 10px 0;
+  border: 1px solid  #ffe79a;
+  border-radius: 25px;
+  width: 60%;
+  color: #ffe79a;
+  font-weight: 550;
+}
+
+.show:hover {
+  cursor: pointer;
+  color:#141414;
+  background-color: #ffe79a;
+}
 
 /*PlaceHolder*/
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -385,6 +403,19 @@ textarea {
 *:focus::-moz-placeholder { opacity: 0; } /* FF 19-50 */
 *:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
 *:focus::placeholder { opacity: 0; }
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+    -webkit-text-fill-color: #ffe79a !important;
+}
 
 /*Clientes*/
 .confClientes {
@@ -494,4 +525,5 @@ textarea {
     display: none;
   }
 }
+
 

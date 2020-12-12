@@ -18,7 +18,7 @@ export default function Home() {
                 <li><a href="#Contato">Contato</a></li>
                 <li><a href="#Clientes">Clientes</a></li>
             </ul>
-          <div onClick={nav} className="burger">
+          <div onClick={botãoBurger} className="burger">
                 <div className="line line1"></div>
                 <div className="line line2"></div>
                 <div className="line line3"></div>
@@ -138,12 +138,14 @@ export default function Home() {
           </div>
         </nav>
         <nav id="Contato" className="confContato">
-          <div className="container50pDireita">
-              <input className="boxContato" placeholder="NOME" type="text"></input>
-              <input className="boxContato" placeholder="E-MAIL" type="mail"></input>
-              <input className="boxContato" placeholder="ASSUNTO" type="text"></input>
-              <textarea className="boxContato" placeholder="TEXTO" type="text" rows="8"></textarea>
-          </div>
+          <form className="container50pDireita" onKeyUp={botãoTexto}>
+              <input id="nome" className="boxContato" placeholder="NOME" type="text"></input>
+              <input id="email" className="boxContato" placeholder="E-MAIL" type="email"></input>
+              <input id="assunto" className="boxContato" placeholder="ASSUNTO" type="text"></input>
+              <textarea id="texto" className="boxContato" placeholder="TEXTO" type="text" rows="8"></textarea>
+              <button className="show" id="button" onClick={validation}>ENVIAR</button>
+              <span id="error"></span>
+          </form>
           <div className="container50pEsquerda">
               <p className="txtContato">OU PELO NOSSO WHATSAPP</p>
               <a href="https://api.whatsapp.com/send?phone=595983331831&text=Olá!" target="_blank"><img className="logoWhatsContato" src="/logoWhats.svg" alt="Logo Whatsapp"/></a>
@@ -155,8 +157,47 @@ export default function Home() {
       </main>
     </div>
   )
-  function nav(){
-    const nav = document.querySelector('.main-nav');
-        nav.classList.toggle('show')
+  function botãoBurger(){
+    const botãoBurger = document.querySelector('.main-nav');
+        botãoBurger.classList.toggle('show')
+  }
+
+  function botãoTexto(event) {  
+    const target = event.target;
+    const currentLength = target.value.length;
+    var x = document.querySelector('.show');
+    if (currentLength > 0) {
+        x.style.display = "block";
+        document.getElementById("error").textContent = ""
+    } else {
+      x.style.display = "none";
+    }   
+  };
+
+  // Name and Email validation Function.
+  function validation() {
+    var nome = document.getElementById("nome").value;
+    var email = document.getElementById("email").value;
+    var assunto = document.getElementById("assunto").value;
+    var texto = document.getElementById("texto").value;
+    var emailReg = '^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9_.-]+)\\.([a-zA-Z]{2,5})$';
+    var error = document.getElementById("error")
+    error.style.color = "#ffe79a"
+    
+    if (nome === '' || email === '' || assunto === '' || texto === '') {
+        error.textContent = "Por favor, preencha todos os campos!"   
+        return false;
+    } else if (!(email).match(emailReg)) {
+        error.textContent = "Email Invalido!" 
+        return false;
+    } else {
+        document.getElementById("nome").value = ""
+        document.getElementById("email").value = ""
+        document.getElementById("assunto").value = ""
+        document.getElementById("texto").value = ""
+        error.textContent = "Sucesso!" 
+        document.querySelector('.show').style.display = "none";
+        return true;
+    }
   }
 }
